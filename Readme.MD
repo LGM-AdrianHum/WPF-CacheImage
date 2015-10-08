@@ -8,7 +8,6 @@ This is a simple project that will help you build an application that needs to c
 The application consist of a valueconverter that takes a URI, and converts into an imagesource that you can use as a background or as a source for an Image. When the image is downloaded from the the source, it is saved to the cache directory, and displayed in the image box.
 
 
-<<<<<<< HEAD
 
 ```xmal
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
@@ -27,46 +26,6 @@ The application consist of a valueconverter that takes a URI, and converts into 
 
 <Image Source="{Binding URL, Mode=OneWay, Converter={StaticResource UrlToCachedImageConverter}, IsAsync=true}"/>
 
-=======
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```xmal
-&lt;UserControl xmlns=&quot;<http://schemas.microsoft.com/winfx/2006/xaml/presentation>&quot;
-	xmlns:x=&quot;<http://schemas.microsoft.com/winfx/2006/xaml>&quot;
-    xmlns:mc=&quot;<http://schemas.openxmlformats.org/markup-compatibility/2006>&quot;
-    xmlns:d=&quot;<http://schemas.microsoft.com/expression/blend/2008>&quot;
-    xmlns:u=&quot;clr-namespace:MyNamespace&quot;
-d:DesignHeight=&quot;500&quot;
-    d:DesignWidth=&quot;420&quot;&gt;
-
-&lt;UserControl.Resources&gt;
-
-:
-
-    &lt;ResourceDictionary&gt;
-
-    :   &lt;u:UriToCachedImageConverter
-        x:Key=&quot;UrlToCachedImageConverter&quot; /&gt;
-
-    &lt;/ResourceDictionary&gt;
-
-&lt;/UserControl.Resources&gt;
-
-:
-
-    &lt;Grid&gt;
-
-    :   &lt;Image Source=&quot;{Binding URL, Mode=OneWay,
-        Converter={StaticResource UrlToCachedImageConverter},
-        IsAsync=true}&quot;/&gt;
-
-    &lt;/Grid&gt;
-
-&lt;/UserControl&gt;
-&lt;Image Source=&quot;{Binding URL, Mode=OneWay, Converter={StaticResource
-UrlToCachedImageConverter}, IsAsync=true}&quot; /&gt;
->>>>>>> 23b442b6cc9409ec1b1a79cd92ccfde9e6c43f90
 ```
 ## Motivation
 
