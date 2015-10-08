@@ -1,0 +1,45 @@
+﻿<Window x:Class="WPF_CacheImage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:wpfCacheImage="clr-namespace:WPF_CacheImage"
+        x:Name="MyMainWindow"
+        Title="WPF Image Cache Example"
+        Width="518"
+        Height="350"
+        x:FieldModifier="public"
+        mc:Ignorable="d">
+
+    <Window.DataContext>
+        <wpfCacheImage:MyWorkingViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <ResourceDictionary>
+            <wpfCacheImage:UriToCachedImageConverter x:Key="UrlToCachedImageConverter" />
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <TextBox x:Name="UrlValue"
+                 Width="200"
+                 Height="22"
+                 Margin="10,10,0,0"
+                 HorizontalAlignment="Left"
+                 VerticalAlignment="Top"
+                 Panel.ZIndex="9"
+                 Text="{Binding UrlValue,
+                                Mode=TwoWay,
+                                UpdateSourceTrigger=LostFocus}" />
+        <Button x:Name="GetUrlButton"
+                Width="45"
+                Height="22"
+                Margin="215,10,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                Panel.ZIndex="9"
+                Click="GetUrlButton_OnClick"
+                Content="Get" />
+        <Image
+            Source="{Binding Path=Url, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource UrlToCachedImageConverter}, IsAsync=true}" />
+    </Grid>
+</Window>
