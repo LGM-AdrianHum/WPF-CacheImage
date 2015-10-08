@@ -39,7 +39,6 @@
                 Panel.ZIndex="9"
                 Click="GetUrlButton_OnClick"
                 Content="Get" />
-        <Image
-            Source="{Binding Path=Url, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource UrlToCachedImageConverter}, IsAsync=true}" />
+        <Image Source="{Binding Path=Url, Mode=OneWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource UrlToCachedImageConverter}, IsAsync=true}" />
     </Grid>
 </Window>
