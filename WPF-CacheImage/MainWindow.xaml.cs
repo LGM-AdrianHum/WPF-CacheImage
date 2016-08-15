@@ -25,8 +25,7 @@ namespace WPF_CacheImage
         private void GetUrlButton_OnClick(object sender, RoutedEventArgs e)
         {
             var dc = DataContext as MyWorkingViewModel;
-            if (dc == null) return;
-            dc.SetUrlIfValid();
+            dc?.SetUrlIfValid();
         }
     }
 }
