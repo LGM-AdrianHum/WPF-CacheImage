@@ -26,7 +26,7 @@ namespace WPF_CacheImage
             set
             {
                 _url = value;
-                OnPropertyChanged("Url");
+                OnPropertyChanged(nameof(Url));
             }
         }
 
@@ -36,7 +36,7 @@ namespace WPF_CacheImage
             set
             {
                 _urlValue = value;
-                OnPropertyChanged("UrlValue");
+                OnPropertyChanged(nameof(UrlValue));
             }
         }
 
@@ -48,7 +48,7 @@ namespace WPF_CacheImage
 
         public void SetUrlIfValid()
         {
-            Uri outUri = null;
+            Uri outUri;
             if (Uri.TryCreate(UrlValue, UriKind.RelativeOrAbsolute, out outUri) && (outUri.Scheme == Uri.UriSchemeHttp || outUri.Scheme == Uri.UriSchemeHttps)) Url = outUri.AbsoluteUri;
         }
 
@@ -56,7 +56,7 @@ namespace WPF_CacheImage
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             var handler = PropertyChanged;
-            if (handler != null) handler(this, new PropertyChangedEventArgs(propertyName));
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
