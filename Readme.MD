@@ -5,7 +5,7 @@ This is a simple project that will help you build an application that needs to c
 
 ## Code Example
 
-The application consist of a valueconverter that takes a URI, and converts into an imagesource that you can use as a background or as a source for an Image. When the image is downloaded from the the source, it is saved to the cache directory, and displayed in the image box.
+The application consist of a value converter that takes a URI, and converts into an imagesource that you can use as a background or as a source for an Image. When the image is downloaded from the the source, it is saved to the cache directory, and displayed in the image box.
 
 ```xml
 <UserControl xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
